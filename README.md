@@ -116,6 +116,7 @@ Please refer to original [docs](https://github.com/hundredrabbits/Orca#operators
 - `]` [**crow ii jf note**(*channel* octave note level)](#-crow-jf-ii-note): Just Friends over i2c in voice mode.
 - `}` [**crow ii jf voice**(octave note level)](#-crow-jf-ii-voice): Just Friends over i2c in note mode.
 - `` ` `` [**crow w/syn**(octave note level)](#-crow-wsyn):
+- `(` [**crow ii er301**(*channel* octave note)](#-crow-er301): er301 over i2c
 - `>` [**g.write**(*x* *y* value)](#-gwrite): Sets Grid LED on bang.
 - `<` [**g.read**(*x* *y*)](#-gread): Reads specific coordinates. If value > 6 outputs bang.
 - `(` [**a.read**(*enc*)](#-aread): Reads Arc encoder value
@@ -137,7 +138,7 @@ Please refer to original [docs](https://github.com/hundredrabbits/Orca#operators
 
 | Controller   | Description       | Values    |
 | ------------ | ----------------- | --------- |
-| `K1 + E1`    | Select operator   | `A`–`Z`, `$`, `?`, `/`, `\`, `|`, `-`, `:`, `%`, `!`, `&`, `^`, `~`, `]`, `}`, `` ` ``, `>`, `<`, `=`, `*`, `#` |
+| `K1 + E1`    | Select operator   | `A`–`Z`, `$`, `?`, `/`, `\`, `|`, `-`, `:`, `%`, `!`, `&`, `^`, `~`, `]`, `}`, `)`, `` ` ``, `>`, `<`, `=`, `*`, `#` |
 | `K1 + E2`    | Select value      | `0`–`z`   |
 | `K1 + E3`    | Select note       | `A`–`G`   |
 | `K2`         | Clear character   |           |
@@ -515,6 +516,11 @@ The **CROW JF II VOICE** operator `]` takes up to 3 parameters (*`octave`* `note
 ### `` ` `` CROW W/SYN
 
 The **CROW JF W/SYN** operator `` ` `` takes up to 3 parameters (*`octave`* `note` `level`).
+
+
+### `)` CROW ER301
+
+The **CROW ER301** operator `)` takes up to 3 parameters (*`channel`* `octave` `note`).
 
 
 ### `>` G.WRITE
