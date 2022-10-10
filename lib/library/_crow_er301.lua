@@ -70,7 +70,7 @@ local crow_er301 = function(self, x, y)
     ["9"] = 16,
   }
 
-  local channel = util.clamp(self:listen(self.x + 1, self.y) or 0, 0, 5) + 1
+  local channel = util.clamp(self:listen(self.x + 1, self.y) or 0, 0, 35) + 1
   local octave = (util.clamp(self:listen(self.x + 2, self.y) or 3, 0, 6) * 12) - 36
   local note = "C"
 
@@ -80,11 +80,9 @@ local crow_er301 = function(self, x, y)
     note = self:glyph_at(self.x + 3, self.y)
   end
 
-  local level = util.clamp(self:listen(self.x + 4, self.y) or 3, 0, 5)
   local tot_note = transpose_tab[note] + octave
 
   if self:neighbor(self.x, self.y, "*") then
-   --  crow.ii.jf.play_voice(channel, tot_note / 12, level / 1)
     crow.ii.er301.cv(channel, tot_note /12)
     crow.ii.er301.tr_pulse(channel)
   end
