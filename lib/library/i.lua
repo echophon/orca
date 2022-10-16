@@ -5,17 +5,12 @@ local I = function(self, x, y)
   self.ports = { {-1, 0 , "in-step" }, {1, 0, "in-mod" }, {0, 1, "i-out"} }
   self:spawn(self.ports)
 
-  local a = self:listen(self.x - 1, self.y) or 1
-  local b = self:listen(self.x + 1, self.y) or 9
-  local l = self:glyph_at(self.x + 1, self.y)
+  local step = self:listen(self.x - 1, self.y) or 1
+  local mod = self:listen(self.x + 1, self.y) or 36
+  local val = self:listen(self.x, self.y + 1) or 0
+  val = ((val + step) % mod)
 
-  b = b ~= a and b or a + 1 if b < a then a, b = b, a end
-  val = (math.floor(a * self.frame) % b) + 1
-
-  local cap = l ~= "." and l == self.up(l) and true
-  local value = cap and self.up(self.chars[val]) or self.chars[val]
-
-  self:write(0, 1, value)
+  self:write(0, 1, self.chars[val])
 end
 
 return I
