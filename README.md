@@ -116,7 +116,7 @@ Please refer to original [docs](https://github.com/hundredrabbits/Orca#operators
 - `]` [**crow ii jf note**(*channel* octave note level)](#-crow-jf-ii-note): Just Friends over i2c in voice mode.
 - `}` [**crow ii jf voice**(octave note level)](#-crow-jf-ii-voice): Just Friends over i2c in note mode.
 - `` ` `` [**crow w/syn**(octave note level)](#-crow-wsyn):
-- `(` [**crow ii er301**(*channel* octave note)](#-crow-er301): er301 over i2c
+- `)` [**crow ii er301**(*channel* octave note)](#-crow-er301): er301 over i2c
 - `>` [**g.write**(*x* *y* value)](#-gwrite): Sets Grid LED on bang.
 - `<` [**g.read**(*x* *y*)](#-gread): Reads specific coordinates. If value > 6 outputs bang.
 - `(` [**a.read**(*enc*)](#-aread): Reads Arc encoder value
